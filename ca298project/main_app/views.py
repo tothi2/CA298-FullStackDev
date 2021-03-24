@@ -70,7 +70,6 @@ def singleproduct(request, prodid):
 
 
 @login_required
-@admin_required
 def myform(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)

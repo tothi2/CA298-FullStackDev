@@ -4,11 +4,17 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <h1> Hello {{ user.username }}</h1>
+        <h1> Hello {{ user.username }}, welcome to Wheely's Bicycle Shop!</h1>
         <a href="/logout">Logout</a>
     {% else %}
         <a href="/login">Login</a>
     {%  endif %}
-    <p>Hello world</p>
-    <img class="homepage-picture" src="{% static  'img/cheezburger.jpg'%}"  alt="">
+<img class="homepage-picture" src="{% static 'img/homepage.jpg'%}"  alt="">
+    <p></p>
+<div class="icon" id="products" >
+    <a class="link"  href="{% url 'all_products' %}">
+        <img class="img" src="{% static  'img/bikes.jpg'%}"  alt="">
+        <span class="link">Products</span>
+    </a>
+</div>
 {% endblock %}
