@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'main_app'
 ]
 
@@ -126,3 +127,9 @@ AUTH_USER_MODEL = "main_app.CaUser"
 
 LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"  # redirect to home page after login
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
